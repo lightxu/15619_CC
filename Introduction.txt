@@ -1,0 +1,56 @@
+01/12/16 Daily Digest for 15319/15619: Cloud Computing
+
+
+Welcome to the S16 Cloud Computing course 1/11/16 9:46 PM
+
+Dear Cloud Computing Students,
+
+ 
+
+Welcome to the Spring 2016 edition of the online Cloud Computing course.
+
+The course is now available on Blackboard: http://blackboard.andrew.cmu.edu/
+
+ 
+
+The course webpage is up on http://cs.cmu.edu/~msakr/15619-s16. Please visit it for the syllabus and more details about the course.
+
+ 
+
+All the course content will be made available using the Open Learning Initiative (link provided through Blackboard - Click on Course Content).
+
+ 
+
+All the course projects will be accessed and submitted through TheProject.Zone (which will become available for login soon). The projects are performed using the Amazon Web Services (AWS) and some on the Microsoft Azure cloud services. The process of getting your AWS and Azure accounts setup are on TheProject.Zone primers. Get started on setting up your accounts as per the primers as soon as TheProject.Zone is available for login.  The Primers and Project 0 are already posted and you need AWS and Azure accounts to complete them.  The deadline to complete the Primers and Project 0 is on Sunday, January 17th, 2016 at 11:59 pm.  Follow the instructions in the primers to submit your AWS account information so that we link your account to the Cloud Computing course account.  The AWS account that you create can only be used for this course during the Spring 2016 semester.  We will link your AWS account to ours so that we can monitor and pay your expenditures. If you do not complete the account linking process, you will not be able to complete the projects in this course.
+
+ 
+
+The course has two identical in-class 50-minute recitations, one of them will be videotaped:
+
+Tuesday at 8AM in GHC 4307 (Videotaped) (First recitation on January 12 at 8am will be in Rashid Auditorium GHC 4401)
+Thursday at 4:30PM in GHC 4307 (Video conferenced to SV campus room SV 211) (Will be provided for the first three weeks of the semester and when necessary afterwards)
+ 
+
+You are free to attend either recitation. The videotape of the Tuesday recitation will be made available to all students on the course webpage (click here).
+
+ 
+
+We have setup a course discussion page on Piazza: https://piazza.com/cmu/spring2016/1531915619/home which can be used to submit and discuss questions with fellow students or with the teaching staff.  We encourage you to use this space to discuss topics, questions and concerns, akin to in-class discussions.  Topics being discussed on piazza over the week will be addressed in the following weekly recitations.
+
+We encourage all Pittsburgh students to attend the first recitation on Tuesday 1/12 at 8am in Rashid Audotorium GHC 4401.  We encourage all remote students to watch the video of the recitation as soon as it is available.
+
+We look forward to a very successful semester.  If you have any questions, feel free to post on Piazza publicly or privately.  If there is an urgent request or concern, please email me directly.
+
+ 
+
+Regards,
+
+ 
+
+Majd
+
+msakr@cs.cmu.edu
+
+GHC 7006
+
+#pin

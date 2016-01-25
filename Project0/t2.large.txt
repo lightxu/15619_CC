@@ -1,0 +1,94 @@
+# t2.large
+
+
+
+ubuntu@ip-172-31-31-115:~$ sysbench --num-threads=8 --test=cpu --cpu-max-prime=20000 run
+sysbench 0.4.12:  multi-threaded system evaluation benchmark
+
+Running the test with following options:
+Number of threads: 8
+
+Doing CPU performance benchmark
+
+Threads started!
+Done.
+
+Maximum prime number checked in CPU test: 20000
+
+
+Test execution summary:
+    total time:                          14.8943s
+    total number of events:              10000
+    total time taken by event execution: 119.0518
+    per-request statistics:
+         min:                                  2.87ms
+         avg:                                 11.91ms
+         max:                                 30.97ms
+         approx.  95 percentile:              15.03ms
+
+Threads fairness:
+    events (avg/stddev):           1250.0000/12.50
+    execution time (avg/stddev):   14.8815/0.01
+
+
+
+ubuntu@ip-172-31-31-115:~$ sysbench --num-threads=1 --test=cpu --cpu-max-prime=40000 run
+sysbench 0.4.12:  multi-threaded system evaluation benchmark
+
+Running the test with following options:
+Number of threads: 1
+
+Doing CPU performance benchmark
+
+Threads started!
+Done.
+
+Maximum prime number checked in CPU test: 40000
+
+
+Test execution summary:
+    total time:                          76.8348s
+    total number of events:              10000
+    total time taken by event execution: 76.8318
+    per-request statistics:
+         min:                                  7.21ms
+         avg:                                  7.68ms
+         max:                                  8.06ms
+         approx.  95 percentile:               7.83ms
+
+Threads fairness:
+    events (avg/stddev):           10000.0000/0.00
+    execution time (avg/stddev):   76.8318/0.00
+
+
+
+ubuntu@ip-172-31-31-115:~$ sysbench --num-threads=4 --test=cpu --cpu-max-prime=50000 run
+sysbench 0.4.12:  multi-threaded system evaluation benchmark
+
+Running the test with following options:
+Number of threads: 4
+
+Doing CPU performance benchmark
+
+Threads started!
+Done.
+
+Maximum prime number checked in CPU test: 50000
+
+
+Test execution summary:
+    total time:                          52.5483s
+    total number of events:              10000
+    total time taken by event execution: 210.1514
+    per-request statistics:
+         min:                                 10.28ms
+         avg:                                 21.02ms
+         max:                                 38.48ms
+         approx.  95 percentile:              26.58ms
+
+Threads fairness:
+    events (avg/stddev):           2500.0000/3.00
+    execution time (avg/stddev):   52.5379/0.01
+
+
+

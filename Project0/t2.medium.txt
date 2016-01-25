@@ -1,0 +1,176 @@
+# t2.medium
+
+
+
+ubuntu@ip-172-31-20-107:~$ sysbench --num-threads=8 --test=cpu --cpu-max-prime=20000 run
+sysbench 0.4.12:  multi-threaded system evaluation benchmark
+
+Running the test with following options:
+Number of threads: 8
+
+Doing CPU performance benchmark
+
+Threads started!
+Done.
+
+Maximum prime number checked in CPU test: 20000
+
+
+Test execution summary:
+    total time:                          14.7017s
+    total number of events:              10000
+    total time taken by event execution: 117.4432
+    per-request statistics:
+         min:                                  2.85ms
+         avg:                                 11.74ms
+         max:                                 30.96ms
+         approx.  95 percentile:              15.02ms
+
+Threads fairness:
+    events (avg/stddev):           1250.0000/17.83
+    execution time (avg/stddev):   14.6804/0.03
+
+
+
+ubuntu@ip-172-31-20-107:~$ sysbench --num-threads=1 --test=cpu --cpu-max-prime=40000 run
+sysbench 0.4.12:  multi-threaded system evaluation benchmark
+
+Running the test with following options:
+Number of threads: 1
+
+Doing CPU performance benchmark
+
+Threads started!
+Done.
+
+Maximum prime number checked in CPU test: 40000
+
+
+Test execution summary:
+    total time:                          76.5590s
+    total number of events:              10000
+    total time taken by event execution: 76.5557
+    per-request statistics:
+         min:                                  7.46ms
+         avg:                                  7.66ms
+         max:                                  8.33ms
+         approx.  95 percentile:               7.78ms
+
+Threads fairness:
+    events (avg/stddev):           10000.0000/0.00
+    execution time (avg/stddev):   76.5557/0.00
+
+
+
+
+ubuntu@ip-172-31-20-107:~$ sysbench --num-threads=4 --test=cpu --cpu-max-prime=50000 run
+sysbench 0.4.12:  multi-threaded system evaluation benchmark
+
+Running the test with following options:
+Number of threads: 4
+
+Doing CPU performance benchmark
+
+Threads started!
+Done.
+
+Maximum prime number checked in CPU test: 50000
+
+
+Test execution summary:
+    total time:                          51.9487s
+    total number of events:              10000
+    total time taken by event execution: 207.7440
+    per-request statistics:
+         min:                                 10.33ms
+         avg:                                 20.77ms
+         max:                                 42.36ms
+         approx.  95 percentile:              26.47ms
+
+Threads fairness:
+    events (avg/stddev):           2500.0000/5.20
+    execution time (avg/stddev):   51.9360/0.00
+
+
+
+ubuntu@ip-172-31-20-107:~$ sysbench --test=fileio --file-total-size=20G --file-test-mode=rndrw --init-rng=on --max-time=300 --max-requests=0 run
+sysbench 0.4.12:  multi-threaded system evaluation benchmark
+
+Running the test with following options:
+Number of threads: 1
+Initializing random number generator from timer.
+
+
+Extra file open flags: 0
+128 files, 160Mb each
+20Gb total file size
+Block size 16Kb
+Number of random requests for random IO: 0
+Read/Write ratio for combined random IO test: 1.50
+Periodic FSYNC enabled, calling fsync() each 100 requests.
+Calling fsync() at the end of test, Enabled.
+Using synchronous I/O mode
+Doing random r/w test
+Threads started!
+Time limit exceeded, exiting...
+Done.
+
+Operations performed:  269340 Read, 179560 Write, 574557 Other = 1023457 Total
+Read 4.1098Gb  Written 2.7399Gb  Total transferred 6.8497Gb  (23.38Mb/sec)
+ 1496.33 Requests/sec executed
+
+Test execution summary:
+    total time:                          300.0007s
+    total number of events:              448900
+    total time taken by event execution: 135.9777
+    per-request statistics:
+         min:                                  0.00ms
+         avg:                                  0.30ms
+         max:                                 13.58ms
+         approx.  95 percentile:               0.68ms
+
+Threads fairness:
+    events (avg/stddev):           448900.0000/0.00
+    execution time (avg/stddev):   135.9777/0.00
+
+
+
+ubuntu@ip-172-31-31-115:~$ sysbench --test=fileio --file-total-size=20G --file-test-mode=rndrw --init-rng=on --max-time=300 --max-requests=0 run
+sysbench 0.4.12:  multi-threaded system evaluation benchmark
+
+Running the test with following options:
+Number of threads: 1
+Initializing random number generator from timer.
+
+
+Extra file open flags: 0
+128 files, 160Mb each
+20Gb total file size
+Block size 16Kb
+Number of random requests for random IO: 0
+Read/Write ratio for combined random IO test: 1.50
+Periodic FSYNC enabled, calling fsync() each 100 requests.
+Calling fsync() at the end of test, Enabled.
+Using synchronous I/O mode
+Doing random r/w test
+Threads started!
+Time limit exceeded, exiting...
+Done.
+
+Operations performed:  316980 Read, 211320 Write, 676161 Other = 1204461 Total
+Read 4.8367Gb  Written 3.2245Gb  Total transferred 8.0612Gb  (27.516Mb/sec)
+ 1761.00 Requests/sec executed
+
+Test execution summary:
+    total time:                          300.0007s
+    total number of events:              528300
+    total time taken by event execution: 154.2806
+    per-request statistics:
+         min:                                  0.00ms
+         avg:                                  0.29ms
+         max:                                 17.36ms
+         approx.  95 percentile:               0.83ms
+
+Threads fairness:
+    events (avg/stddev):           528300.0000/0.00
+    execution time (avg/stddev):   154.2806/0.00

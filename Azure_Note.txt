@@ -1,0 +1,139 @@
+Azure Note
+
+First application:
+
+AppId: 593d2a77-1889-4024-8656-d018e63392a6
+Application key: 123456
+Object Id: b3260e5a-4086-47db-807f-b7abfc843255
+tenant id: 04818ac6-becd-4259-ac10-841a9ba0fbe6
+
+Container:
+
+Access Key: YsPTnJTxT/JQg+oAEyxGPc3xWfRUFzwPgsyJwp1BppnuLwnfLYprjfXLHJYJh9GcJuM3yLRJ6OO9D0TWdJxkSg==
+
+azure storage blob copy start https://cc15619.blob.core.windows.net/system/Microsoft.Compute/Images/vhds/primertest-osDisk.7ec2e680-5a2f-462b-ba77-cd7b707389d4.vhd  --dest-account-name cc2015shicheng --dest-account-key YsPTnJTxT/JQg+oAEyxGPc3xWfRUFzwPgsyJwp1BppnuLwnfLYprjfXLHJYJh9GcJuM3yLRJ6OO9D0TWdJxkSg== --dest-container system
+
+azure storage blob copy show --account-name cc2015shicheng --account-key YsPTnJTxT/JQg+oAEyxGPc3xWfRUFzwPgsyJwp1BppnuLwnfLYprjfXLHJYJh9GcJuM3yLRJ6OO9D0TWdJxkSg== --container system --blob Microsoft.Compute/Images/vhds/primertest-osDisk.7ec2e680-5a2f-462b-ba77-cd7b707389d4.vhd
+
+azure storage blob copy start https://cc15619.blob.core.windows.net/system/Microsoft.Compute/Images/vhds/cc15619p0lgv2-osDisk.838bf28c-ed03-41f9-9810-4cbfa668d22e.vhd --dest-account-name cc2015shicheng --dest-account-key YsPTnJTxT/JQg+oAEyxGPc3xWfRUFzwPgsyJwp1BppnuLwnfLYprjfXLHJYJh9GcJuM3yLRJ6OO9D0TWdJxkSg== --dest-container system
+
+https://github.com/Azure/azure-quickstart-templates/tree/master/101-vm-from-user-image
+http://www.codeisahighway.com/how-to-create-a-virtual-machine-from-a-custom-image-using-an-arm-template/
+
+
+$ azure ad app create --name test --home-page https://ttest.com --identifier-uris https://ttest.com --password 123456
+info:    Executing command ad app create
++ Creating application test
+data:    AppId:                   40b1bc0d-08ec-4177-9210-a880e333aaa5
+data:    ObjectId:                5c7e0115-4319-4856-ad48-6e68d9c01eb0
+data:    DisplayName:             test
+data:    IdentifierUris:          0=https://ttest.com
+data:    ReplyUrls:
+data:    AvailableToOtherTenants:  False
+data:    AppPermissions:
+data:                             claimValue:  user_impersonation
+data:                             description:  Allow the application to access test on behalf of the signed-in user.
+data:                             directAccessGrantTypes:
+data:                             displayName:  Access test
+data:                             impersonationAccessGrantTypes:  impersonated=User, impersonator=Application
+data:                             isDisabled:
+data:                             origin:  Application
+data:                             permissionId:  a2c2df79-7b87-4190-a158-1be0e5ed32cf
+data:                             resourceScopeType:  Personal
+data:                             userConsentDescription:  Allow the application to access test on your behalf.
+data:                             userConsentDisplayName:  Access test
+data:                             lang:
+info:    ad app create command OK
+
+$ azure ad sp create 40b1bc0d-08ec-4177-9210-a880e333aaa5
+info:    Executing command ad sp create
++ Creating service principal for application 40b1bc0d-08ec-4177-9210-a880e333aaa5
+data:    Object Id:               59ca484e-8bbc-4462-b0e9-f2836b2209d2
+data:    Display Name:            test
+data:    Service Principal Names:
+data:                             40b1bc0d-08ec-4177-9210-a880e333aaa5
+data:                             https://ttest.com
+info:    ad sp create command OK
+
+    
+$ azure role assignment create --objectId 59ca484e-8bbc-4462-b0e9-f2836b2209d2 -o Owner -c /subscriptions/e678a9cb-3c70-4bf6-af8a-7629bab46157
+info:    Executing command role assignment create
++ Finding role with specified name
+\data:    RoleAssignmentId     : /subscriptions/e678a9cb-3c70-4bf6-af8a-7629bab46157/providers/Microsoft.Authorization/roleAssignments/1f2582f6-f1c7-46a4-89a6-61d93ae99772
+data:    RoleDefinitionName   : Owner
+data:    RoleDefinitionId     : 8e3af657-a8ff-443c-a75c-2fe8c4bcb635
+data:    Scope                : /subscriptions/e678a9cb-3c70-4bf6-af8a-7629bab46157
+data:    Display Name         : test
+data:    SignInName           :
+data:    ObjectId             : 59ca484e-8bbc-4462-b0e9-f2836b2209d2
+data:    ObjectType           : ServicePrincipal
+data:
++
+info:    role assignment create command OK
+
+[
+  {
+    "id": "e678a9cb-3c70-4bf6-af8a-7629bab46157",
+    "name": "Azure Pass",
+    "user": {
+      "name": "lightxuzju@hotmail.com",
+      "type": "user"
+    },
+    "tenantId": "04818ac6-becd-4259-ac10-841a9ba0fbe6",
+    "state": "Enabled",
+    "isDefault": true,
+    "registeredProviders": [],
+    "environmentName": "AzureCloud"
+  }
+]
+
+ApplicationID: 40b1bc0d-08ec-4177-9210-a880e333aaa5
+ApplicationKey: 123456
+Tenantid: 04818ac6-becd-4259-ac10-841a9ba0fbe6
+
+auth_token:
+eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ik1uQ19WWmNBVGZNNXBPWWlKSE1iYTlnb0VLWSIsImtpZCI6Ik1uQ19WWmNBVGZNNXBPWWlKSE1iYTlnb0VLWSJ9.eyJhdWQiOiJodHRwczovL21hbmFnZW1lbnQuY29yZS53aW5kb3dzLm5ldC8iLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC8wNDgxOGFjNi1iZWNkLTQyNTktYWMxMC04NDFhOWJhMGZiZTYvIiwiaWF0IjoxNDUzMDg4NjE5LCJuYmYiOjE0NTMwODg2MTksImV4cCI6MTQ1MzA5MjUxOSwiYXBwaWQiOiI0MGIxYmMwZC0wOGVjLTQxNzctOTIxMC1hODgwZTMzM2FhYTUiLCJhcHBpZGFjciI6IjEiLCJpZHAiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC8wNDgxOGFjNi1iZWNkLTQyNTktYWMxMC04NDFhOWJhMGZiZTYvIiwib2lkIjoiNTljYTQ4NGUtOGJiYy00NDYyLWIwZTktZjI4MzZiMjIwOWQyIiwic3ViIjoiNTljYTQ4NGUtOGJiYy00NDYyLWIwZTktZjI4MzZiMjIwOWQyIiwidGlkIjoiMDQ4MThhYzYtYmVjZC00MjU5LWFjMTAtODQxYTliYTBmYmU2IiwidmVyIjoiMS4wIn0.OZn5c_rwkHwgPwHgM1lolNkYy47CeoNMa-oQ0vMagAfbfUVu0RUFKvNSwsZesX2uiVzfIdY1LS8ggWwsL_6rZxAXBksOLMqkaC7VB3x7gjiHQen3ybJyySebMDH0UH2rkyo6xysgQFWCNpYhkNlpyz8Obg9Fu0AWYjYFu0m7SJv02vH6DccQHE81ULED5Zofbf6gLilMyXp3PfeHWz9qr-tEUHXqCjlHZ9pMRtn-BTslLZFifvqfB9M1lSCwvexrwX3ZxKDsVKZeKUCJyX56UkhS7pHc7daEgAU-I1q8vEICy2FIAQy6J__yI1uIS3jsd6Ge1QTQqR1WKgYUIUzA0Q
+
+OAUTH 2.0 token endpoint URL(format: https://login.microsoftonline.com/00000000-0000-0000-0000-000000000000/oauth2/token)
+https://login.microsoftonline.com/04818ac6-becd-4259-ac10-841a9ba0fbe6/oauth2/token
+
+
+$ python azure_demo_create_vm_from_ami.py cc2015shicheng e678a9cb-3c70-4bf6-af8a-7629bab46157 https://login.microsoftonline.com/04818ac6-becd-4259-ac10-841a9ba0fbe6/oauth2/token 40b1bc0d-08ec-4177-9210-a880e333aaa5 123456 cc15619p0dcv2-osDisk.b7dbe1d0-782c-43b5-a7df-1896844377aa.vhd Standard_A1
+Your source os disk should be in storage account[cc2015shicheng].
+ Your subscription id is e678a9cb-3c70-4bf6-af8a-7629bab46157
+ Your Endpoint uri is https://login.microsoftonline.com/04818ac6-becd-4259-ac10-841a9ba0fbe6/oauth2/token
+ Your application id is 40b1bc0d-08ec-4177-9210-a880e333aaa5
+ your application secret key is 123456
+ Please make sure you input the correct parameters for these!
+created (updated) resource group
+created virtual network and network interface card
+creating virtual machine
+VM cc9433524vm available at IP: 40.76.2.53
+
+$ python azure_demo_create_vm_from_ami.py cc2015shicheng e678a9cb-3c70-4bf6-af8a-7629bab46157 https://login.microsoftonline.com/04818ac6-becd-4259-ac10-841a9ba0fbe6/oauth2/token 40b1bc0d-08ec-4177-9210-a880e333aaa5 123456 cc15619p0dcv2-osDisk.b7dbe1d0-782c-43b5-a7df-1896844377aa.vhd Standard_A2
+Your source os disk should be in storage account[cc2015shicheng].
+ Your subscription id is e678a9cb-3c70-4bf6-af8a-7629bab46157
+ Your Endpoint uri is https://login.microsoftonline.com/04818ac6-becd-4259-ac10-841a9ba0fbe6/oauth2/token
+ Your application id is 40b1bc0d-08ec-4177-9210-a880e333aaa5
+ your application secret key is 123456
+ Please make sure you input the correct parameters for these!
+created (updated) resource group
+created virtual network and network interface card
+creating virtual machine
+VM cc9646523vm available at IP: 40.76.1.117
+
+$ python azure_demo_create_vm_from_ami.py cc2015shicheng e678a9cb-3c70-4bf6-af8a-7629bab46157 https://login.microsoftonline.com/04818ac6-becd-4259-ac10-841a9ba0fbe6/oauth2/token 40b1bc0d-08ec-4177-9210-a880e333aaa5 123456 cc15619p0lgv2-osDisk.838bf28c-ed03-41f9-9810-4cbfa668d22e.vhd Standard_D1
+Your source os disk should be in storage account[cc2015shicheng].
+ Your subscription id is e678a9cb-3c70-4bf6-af8a-7629bab46157
+ Your Endpoint uri is https://login.microsoftonline.com/04818ac6-becd-4259-ac10-841a9ba0fbe6/oauth2/token
+ Your application id is 40b1bc0d-08ec-4177-9210-a880e333aaa5
+ your application secret key is 123456
+ Please make sure you input the correct parameters for these!
+created (updated) resource group
+created virtual network and network interface card
+creating virtual machine
+VM cc9816316vm available at IP: 40.76.13.230
+
+
+
+python azure_demo_create_vm_from_ami.py cc2015shicheng e678a9cb-3c70-4bf6-af8a-7629bab46157 https://login.microsoftonline.com/04818ac6-becd-4259-ac10-841a9ba0fbe6/oauth2/token 40b1bc0d-08ec-4177-9210-a880e333aaa5 123456 cc15619p0lgv2-osDisk.838bf28c-ed03-41f9-9810-4cbfa668d22e.vhd Standard_D1
